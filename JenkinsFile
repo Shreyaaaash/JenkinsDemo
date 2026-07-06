@@ -1,50 +1,19 @@
-pipeline{
-
+pipeline {
     agent any
 
-    stages{
+    stages {
 
-        stage('Checkout'){
-
-            steps{
-
+        stage('Checkout') {
+            steps {
                 git branch: 'main',
-                url: 'https://github.com/Shreyaaaash/JenkinsDemo.git'
-
+                    url: 'https://github.com/Shreyaaaash/JenkinsDemo.git'
             }
-
         }
 
-        stage('Restore'){
-
-            steps{
-
+        stage('Restore') {
+            steps {
                 bat 'dotnet restore'
-
             }
-
         }
-
-        stage('Build'){
-
-            steps{
-
-                bat 'dotnet build'
-
-            }
-
-        }
-
-        stage('Run'){
-
-            steps{
-
-                bat 'dotnet run'
-
-            }
-
-        }
-
     }
-
 }
