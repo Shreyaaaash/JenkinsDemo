@@ -1,0 +1,49 @@
+pipeline{
+
+    agent any
+
+    stages{
+
+        stage('Checkout'){
+
+            steps{
+
+                git 'https://github.com/username/DevOpsPractice.git'
+
+            }
+
+        }
+
+        stage('Restore'){
+
+            steps{
+
+                bat 'dotnet restore'
+
+            }
+
+        }
+
+        stage('Build'){
+
+            steps{
+
+                bat 'dotnet build'
+
+            }
+
+        }
+
+        stage('Run'){
+
+            steps{
+
+                bat 'dotnet run'
+
+            }
+
+        }
+
+    }
+
+}
