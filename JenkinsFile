@@ -8,7 +8,7 @@ pipeline{
 
             steps{
 
-                git 'https://github.com/username/DevOpsPractice.git'
+                git 'https://github.com/Shreyaaaash/JenkinsDemo.git'
 
             }
 
